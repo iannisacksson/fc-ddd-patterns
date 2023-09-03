@@ -46,4 +46,9 @@ export default class Order {
   total(): number {
     return this._items.reduce((acc, item) => acc + item.total(), 0);
   }
+
+  updateItem(item: OrderItem): void {
+    const itemIndexFound = this._items.findIndex(orderItem => orderItem.id === item.id);
+    this._items[itemIndexFound] = item;
+  }
 }

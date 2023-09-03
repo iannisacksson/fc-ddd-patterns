@@ -30,7 +30,7 @@ export default class OrderItemModel extends Model {
   @Column({ allowNull: false })
   declare order_id: string;
 
-  @BelongsTo(() => OrderModel)
+  @BelongsTo(() => OrderModel, { onDelete: 'CASCADE', onUpdate: 'CASCADE' })
   declare order: OrderModel;
 
   @Column({ allowNull: false })
